@@ -83,17 +83,17 @@
                     <navigationItem key="navigationItem" title="CODER CLOTH" id="zjX-a3-59S"/>
                     <connections>
                         <outlet property="categoryTable" destination="F7z-Rw-lbD" id="OrQ-zB-Pfs"/>
-                        <segue destination="mLq-kV-L6t" kind="show" id="mxx-s7-7Jn"/>
+                        <segue destination="mLq-kV-L6t" kind="show" identifier="ProductsVCSegue" id="mxx-s7-7Jn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="72.799999999999997" y="34.632683658170919"/>
         </scene>
-        <!--View Controller-->
+        <!--ProductVC-->
         <scene sceneID="rce-bF-oba">
             <objects>
-                <viewController id="mLq-kV-L6t" sceneMemberID="viewController">
+                <viewController id="mLq-kV-L6t" customClass="ProductVC" customModule="coder_cloth" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="u3W-me-1BK"/>
                         <viewControllerLayoutGuide type="bottom" id="6Kd-8H-m3s"/>
@@ -114,7 +114,7 @@
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GFE-a9-mtv">
                                 <rect key="frame" x="0.0" y="62" width="375" height="541"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qBj-g8-mTa">
                                     <size key="itemSize" width="179" height="264"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -122,14 +122,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vEY-lS-9rj">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="vEY-lS-9rj" customClass="ProductCell" customModule="coder_cloth" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="179" height="264"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="179" height="264"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ymm-6x-B2J">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="shirt01" translatesAutoresizingMaskIntoConstraints="NO" id="Ymm-6x-B2J">
                                                     <rect key="frame" x="0.0" y="0.0" width="179" height="180"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="180" id="DdC-ag-csp"/>
@@ -149,6 +149,7 @@
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.95294117649999999" green="0.95294117649999999" blue="0.95294117649999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="Ubi-zH-vQn" firstAttribute="leading" secondItem="vEY-lS-9rj" secondAttribute="leadingMargin" id="Hot-dN-yKY"/>
                                             <constraint firstItem="Ymm-6x-B2J" firstAttribute="top" secondItem="vEY-lS-9rj" secondAttribute="top" id="MDJ-ZD-IzS"/>
@@ -160,11 +161,16 @@
                                             <constraint firstAttribute="trailing" secondItem="4f8-fu-izj" secondAttribute="trailing" id="m2J-S0-53M"/>
                                             <constraint firstAttribute="trailing" secondItem="Ymm-6x-B2J" secondAttribute="trailing" id="rBW-xO-DPG"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="productDescription" destination="Ubi-zH-vQn" id="zy9-mE-c2f"/>
+                                            <outlet property="productImage" destination="Ymm-6x-B2J" id="Chs-3d-4FY"/>
+                                            <outlet property="productPrice" destination="4f8-fu-izj" id="Q7L-0Y-8k5"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="6Kd-8H-m3s" firstAttribute="top" secondItem="GFE-a9-mtv" secondAttribute="bottom" id="IEF-pL-LUM"/>
                             <constraint firstItem="zHS-PH-byL" firstAttribute="leading" secondItem="rVN-zK-HUG" secondAttribute="leadingMargin" id="Tda-tl-2Y8"/>
@@ -174,6 +180,9 @@
                             <constraint firstItem="zHS-PH-byL" firstAttribute="top" secondItem="u3W-me-1BK" secondAttribute="bottom" constant="20" id="phX-1g-oqg"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="productsCollection" destination="GFE-a9-mtv" id="Q3p-KR-OAf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIl-Rc-co2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -204,6 +213,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="shirt01" width="500" height="500"/>
         <image name="shirts" width="1024" height="703"/>
     </resources>
 </document>
